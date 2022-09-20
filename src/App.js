@@ -1,41 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import QRScanner from './components/qr-scanner/index.js'
-import { Container, Row, Col } from 'react-bootstrap'
+import AppBody from './components/app-body/index.js'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-          Hello World
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-
-      <Container>
-        <Row>
-          <Col>
-            <QRScanner resultHandler={handleResult} />
-          </Col>
-        </Row>
-      </Container>
-
+      <AppBody />
     </div>
   );
 }
-
-function handleResult(data) {
-  console.log('handleResult() data: ', data)
-};
 
 export default App;

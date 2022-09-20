@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import QRScanner from './components/qr-scanner/index.js'
+import { Container, Row, Col } from 'react-bootstrap'
 
 function App() {
   return (
@@ -8,6 +10,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
+          Hello World
         </p>
         <a
           className="App-link"
@@ -18,8 +21,21 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <Container>
+        <Row>
+          <Col>
+            <QRScanner resultHandler={handleResult} />
+          </Col>
+        </Row>
+      </Container>
+
     </div>
   );
 }
+
+function handleResult(data) {
+  console.log('handleResult() data: ', data)
+};
 
 export default App;

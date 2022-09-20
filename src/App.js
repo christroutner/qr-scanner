@@ -1,13 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
 import AppBody from './components/app-body/index.js'
 
-function App() {
+function App () {
   return (
-    <div className="App">
+    <div className='App'>
       <AppBody />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

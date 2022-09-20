@@ -8,7 +8,7 @@ import QRScanner from '../qr-scanner/index.js'
 import { Container, Row, Col } from 'react-bootstrap'
 
 class AppBody extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     this.state = {
@@ -16,10 +16,10 @@ class AppBody extends React.Component {
     }
 
     // Bind the this object to all event handlers
-    this.handleResult = this.handleResult.bind(this)
+    this.onResult = this.onResult.bind(this)
   }
 
-  render() {
+  render () {
     return (
       <div>
         <Container>
@@ -31,13 +31,13 @@ class AppBody extends React.Component {
             <Col>
               {
                 this.state.qrScanResult
-                ? (
-                  <>
-                  <h2>Scan result:</h2>
-                  <p>{this.state.qrScanResult}</p>
-                  </>
-                )
-                : (<QRScanner resultHandler={this.handleResult} />)
+                  ? (
+                    <>
+                      <h2>Scan result:</h2>
+                      <p>{this.state.qrScanResult}</p>
+                    </>
+                    )
+                  : (<QRScanner resultHandler={this.onResult} />)
               }
 
             </Col>
@@ -47,8 +47,8 @@ class AppBody extends React.Component {
     )
   }
 
-  handleResult(data) {
-    if(!this.state.qrScanResult) {
+  onResult (data) {
+    if (!this.state.qrScanResult) {
       console.log('handleResult() data: ', data)
 
       const text = data.text
@@ -58,7 +58,6 @@ class AppBody extends React.Component {
         qrScanResult: text
       })
     }
-
   };
 }
 

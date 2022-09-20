@@ -4,10 +4,10 @@
 
 // Global npm libraries
 import React from 'react'
-import {QrReader} from 'react-qr-reader'
+import { QrReader } from 'react-qr-reader'
 
 class QRScanner extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     this.state = {
@@ -18,8 +18,7 @@ class QRScanner extends React.Component {
     this.handleOnResult = this.handleOnResult.bind(this)
   }
 
-
-  render() {
+  render () {
     return (
       <div>
         <QrReader
@@ -29,21 +28,20 @@ class QRScanner extends React.Component {
     )
   }
 
-  handleOnResult(result, error) {
-    if(result) {
+  handleOnResult (result, error) {
+    if (result) {
       try {
         // console.log('handleOnResult() result: ', result)
         this.state.handleResult(result)
-      } catch(err) {
+      } catch (err) {
         console.error(err)
       }
     }
 
-    if(error) {
+    if (error) {
       // console.log('handleOnResult() error: ', error)
     }
   }
-
 }
 
 export default QRScanner
